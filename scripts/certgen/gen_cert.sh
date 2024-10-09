@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # This script generates all certificates and keys for the SCA, TLS, and upload
 # All certificates are self-signed
 # The DN is taken from the configuration file passed as argument

@@ -1,9 +1,10 @@
 # default values - can be overwritten by environment variables with the same name
-OSSL_COUNTRY_NAME=US
-OSSL_STATE_NAME=Ny
-OSSL_LOCALITY_NAME=TEST
-OSSL_ORGANIZATION_NAME=WHO
-OSSL_ORGANIZATIONAL_UNIT_NAME=R&D
+OSSL_COUNTRY_NAME = XA
+OSSL_STATE_NAME = Test Country XA
+OSSL_LOCALITY_NAME = Geneva
+OSSL_ORGANIZATION_NAME = T-Systems International GmbH
+OSSL_ORGANIZATIONAL_UNIT_NAME = TNGOperations
+OSSL_COMMON_NAME = NationXA_TNP_SCA
 
 [req]
 prompt = no
@@ -16,9 +17,9 @@ ST = $ENV::OSSL_STATE_NAME
 L = $ENV::OSSL_LOCALITY_NAME
 O = $ENV::OSSL_ORGANIZATION_NAME
 OU = $ENV::OSSL_ORGANIZATIONAL_UNIT_NAME
-CN = SCA_DGC_DE_01
+CN = $ENV::OSSL_COMMON_NAME
+
 [ext]
 basicConstraints = critical, CA:TRUE, pathlen:0
 keyUsage = critical, cRLSign, keyCertSign
 subjectKeyIdentifier = hash
-
